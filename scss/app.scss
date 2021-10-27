@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+$primary: rgb(0, 4, 23);
+$green: rgba(85, 117, 41, 1);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+::selection, ::-moz-selection {
+  background-color:rgba($green, 0.2);
+}
+
+* a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  width: fit-content;
+  width: -moz-fit-content;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  max-width: 978.50px;
+  margin: 0 auto;
+  padding: 2em;
+  background-color: rgba(246, 250, 241, 0.25);
+  color: $primary;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2em;
+  font-size: 20px;
+}
+
+aside {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Playfair Display", "Georgia", "Times New Roman", serif;
+  font-size: 16px;
+  a {
+    text-decoration: none;
+  }
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+
+  ul li {
+    display: inline;
+
+    &:not(:last-child)::after {
+      content: "\02003\0002F\02003"
+    }
+
+    a:hover {
+      color: $green;
+    }
+  }
+}
+
+h1 {
+  font-family: "Playfair Display", "Georgia", "Times New Roman", serif;
+  font-weight: 500;
+}
+
+time {
+  font-family: "IBM Plex Mono", "Consolas", "Andale Mono", monospace;
+}
+
+main p,
+main p > time {
+  font-family: "Tinos", "Times New Roman", serif;
+  font-weight: 400;
+
+  & strong {
+    font-weight: 700;
+  }
+}
+
+main p strong {
+    font-weight: 700;
+}
+
+main p code, main code {
+  font-family: "IBM Plex Mono", "Consolas", "Andale Mono", monospace;
+  font-size: 0.75em;
+
+  & a:hover {
+    color: $green;
+  }
+}
+
+p {
+  & > time {
+    color: rgba(20, 40, 60, 0.5);
+    font-size: 0.75em;
+    white-space: nowrap;
+
+    &::before {
+      content: "\02002\00028";
+    }
+    &::after {
+      content: "\00029";
+    }
+  }
+
+  a:hover {
+    color: $green;
+  }
+}
+
+section#post {
+  article {
+    display: grid;
+    grid-gap: 2em;
+    line-height: 1.5em;
+
+    & > h1 {
+      margin-bottom: -2em;
+    }
+
+    header {
+      h1 {
+        font-size: 1.5em;
+
+        &::after {
+          content: "";
+          height: 0.5em;
+          margin-top: -0.35em;
+          margin-left: -0.2em;
+          width: 75%;
+          display: block;
+          background-color: rgba($green, 0.2);
+        }
+      }
+      time {
+        display: block;
+        margin-top: 1em;
+        font-size: 0.65em;
+        color: rgba(20, 40, 60, 0.5);
+      }
+    }
+    blockquote {
+      border-left: 5px solid rgba($green, 0.2);
+      padding-left: 1em;
+      margin-left: -1em;
+
+      & > small {
+        color: rgba(0, 4, 23, 0.5);
+      }
+    }
+  }
+}
+
+section#posts {
+  display: grid;
+  grid-gap: 1em;
+
+  article > header {
+    display: flex;
+    flex-direction: column-reverse;
+    h1 {
+      a {
+        &::after {
+          content: "";
+          height: 0.5em;
+          margin-top: -0.5em;
+          margin-left: -0.25em;
+          width: 0%;
+          display: block;
+          background-color: rgba($green, 0.3);
+          transition: all 0.15s ease-in-out;
+        }
+        &:hover::after {
+          width: 75%;
+        }
+      }
+    }
+    time {
+      font-size: 0.65em;
+    }
+  }
+}
+
+footer {
+  font-family: "IBM Plex Mono", "Consolas", "Andale Mono", monospace;
+  font-size: .5em;
+  color: rgba($primary, 0.5);
+}
+
+@media (min-width: 350px) {
+  section#posts > article > header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 1em;
+    align-items: baseline;
+  }
+}
