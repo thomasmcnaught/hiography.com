@@ -105,6 +105,7 @@ main p strong {
 main p code, main code {
   font-family: "IBM Plex Mono", "Consolas", "Andale Mono", monospace;
   font-size: 0.75em;
+  word-break: break-word;
 
   & a:hover {
     color: $green;
