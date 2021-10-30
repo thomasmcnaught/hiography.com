@@ -2,8 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-$primary: rgb(0, 4, 23);
-$green: rgba(85, 117, 41, 1);
+$brand: #397062;
+$primary: scale-color($brand, $saturation: -50%, $lightness: -50%);
 
 * {
   padding: 0;
@@ -12,7 +12,7 @@ $green: rgba(85, 117, 41, 1);
 }
 
 ::selection, ::-moz-selection {
-  background-color:rgba($green, 0.2);
+  background-color:rgba($brand, 0.2);
 }
 
 * a {
@@ -42,7 +42,7 @@ body {
   max-width: 978.50px;
   margin: 0 auto;
   padding: 2em;
-  background-color: rgba(246, 250, 241, 0.25);
+  background-color: scale-color($brand, $saturation: -95%, $lightness: 97%);
   color: $primary;
   display: grid;
   grid-template-columns: 1fr;
@@ -74,7 +74,7 @@ nav {
     }
 
     a:hover {
-      color: $green;
+      color: $brand;
     }
   }
 }
@@ -108,13 +108,13 @@ main p code, main code {
   word-break: break-word;
 
   & a:hover {
-    color: $green;
+    color: $brand;
   }
 }
 
 p {
   & > time {
-    color: rgba(20, 40, 60, 0.5);
+    color: rgba($primary, 0.5);
     font-size: 0.75em;
     white-space: nowrap;
 
@@ -127,7 +127,7 @@ p {
   }
 
   a:hover {
-    color: $green;
+    color: $brand;
   }
 }
 
@@ -152,18 +152,18 @@ section#post {
           margin-left: -0.2em;
           width: 75%;
           display: block;
-          background-color: rgba($green, 0.2);
+          background-color: rgba($brand, 0.2);
         }
       }
       time {
         display: block;
         margin-top: 1em;
         font-size: 0.65em;
-        color: rgba(20, 40, 60, 0.5);
+        color: rgba($primary, 0.5);
       }
     }
     blockquote {
-      border-left: 5px solid rgba($green, 0.2);
+      border-left: 5px solid rgba($brand, 0.2);
       padding-left: 1em;
       margin-left: -1em;
 
@@ -190,7 +190,7 @@ section#posts {
           margin-left: -0.25em;
           width: 0%;
           display: block;
-          background-color: rgba($green, 0.3);
+          background-color: rgba($brand, 0.3);
           transition: all 0.15s ease-in-out;
         }
         &:hover::after {
