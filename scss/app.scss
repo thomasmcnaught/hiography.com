@@ -32,10 +32,37 @@ h6 {
   width: -moz-fit-content;
 }
 
+figure {
+  background-color: scale-color($brand, $saturation: -100%, $lightness: -87%);
+  padding: 2em;
+
+  & > img {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;    
+  }
+}
+
 img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+figcaption {
+  font-family: "IBM Plex Mono", "Consolas", "Andale Mono", monospace;
+  padding: 2em 0 0 0;
+  font-size: .6em;
+  color: scale-color($brand, $saturation: -95%, $lightness: 97%);
+  text-align: center;
+
+  & em {
+    color: scale-color($brand, $saturation: -95%, $lightness: 97%);
+    opacity: 0.5;
+    font-style: normal;
+    margin-left: 1em;
+  }
 }
 
 body {
